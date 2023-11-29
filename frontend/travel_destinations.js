@@ -1,4 +1,4 @@
-import { base64ToImage } from "../utils/base64toImg.js";
+import { base64ToImage } from "./utils/base64toImg.js";
 import deleteEntry from "./delete.js";
 
 

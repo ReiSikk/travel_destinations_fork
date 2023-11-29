@@ -1,5 +1,5 @@
-const baseUrl = process.env.BACKEND_URL || 'http://127.0.0.1:4000';
-const apiEndPoint = `${baseUrl}/destinations`;
+
+const apiEndPoint = 'http://127.0.0.1:4000/destinations';
 
 document.addEventListener("DOMContentLoaded", async () => {
     const form = document.getElementById('new-destination');
