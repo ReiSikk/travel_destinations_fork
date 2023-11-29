@@ -1,14 +1,14 @@
+const dotenv = require('dotenv');
+dotenv.config();
 const express = require('express')
 const mongoose = require('mongoose')
 const { ObjectId } = require("mongodb");
-const dotenv = require('dotenv');
 const jwt = require('jsonwebtoken');
 var passport = require("passport");
 var passportJWT = require("passport-jwt");
 const cors = require('cors');
 const app = express()
 const port = 4000
-dotenv.config();
 
 console.log(process.env.jwt_secret);
 
