@@ -58,7 +58,7 @@ const Destination = require('../schemas/destination.js');
 const User = require('../schemas/user.js');
 
 
-mongoose.connect('mongodb://127.0.0.1:27017/travel_destinations_ola').catch((error) => console.log(error));
+mongoose.connect(process.env.MONGODB_URI).catch((error) => console.log(error));
 
 
 //Listen for GET requests
@@ -67,7 +67,7 @@ app.get("/destinations/:destinationId", (req, res) => {
   console.log(destinationId, "destinationId");
 
   mongoose
-    .connect('mongodb://127.0.0.1:27017/travel_destinations_ola')
+    .connect(process.env.MONGODB_URI)
     .then(() => {
       console.log("MongoDB Connected...");
       Destination.findById(destinationId)
@@ -84,7 +84,7 @@ app.get("/destinations/:destinationId", (req, res) => {
 //Listen for GET requests
     app.get("/destinations", (req, res) => {
       mongoose
-        .connect('mongodb://127.0.0.1:27017/travel_destinations_ola')
+        .connect(process.env.MONGODB_URI)
         .then(() => {
           console.log("MongoDB Connected...");
           Destination.find()
@@ -118,7 +118,7 @@ app.get("/destinations/:destinationId", (req, res) => {
 //Listen for POST requests
   app.post("/destinations", (req, res) => {
     mongoose
-      .connect('mongodb://127.0.0.1:27017/travel_destinations_ola')
+      .connect(process.env.MONGODB_URI)
       .then(() => {
         console.log("MongoDB Connected...");
         if (req.body.country && req.body.title) {
@@ -156,7 +156,7 @@ app.get("/destinations/:destinationId", (req, res) => {
 
 app.delete('/destinations/:id', passport.authenticate('jwt', { session: false }), (req, res) => {
   mongoose
-    .connect('mongodb://127.0.0.1:27017/travel_destinations_ola')
+    .connect(process.env.MONGODB_URI)
     .then(() => {
       console.log("MongoDB Connected...");
       const destinationId = req.params.id;
@@ -186,7 +186,7 @@ app.delete('/destinations/:id', passport.authenticate('jwt', { session: false })
 //user signup request
 app.post("/auth/signup", (req, res) => {
   mongoose
-    .connect('mongodb://127.0.0.1:27017/travel_destinations_ola')
+    .connect(process.env.MONGODB_URI)
     .then(() => {
       console.log("MongoDB Connected...");
 
@@ -218,7 +218,7 @@ app.post("/auth/signup", (req, res) => {
 
 //user login request
 app.post('/auth/login', cors(corsOptions), (req, res, next) => {
-  mongoose.connect('mongodb://127.0.0.1:27017/travel_destinations_ola')
+  mongoose.connect(process.env.MONGODB_URI)
   .then(() => {
     console.log("MongoDB Connected...");
 
