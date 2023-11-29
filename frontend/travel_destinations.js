@@ -1,4 +1,4 @@
-import { base64ToImage } from "./utils/base64toImg.js";
+import { base64ToImage } from "../utils/base64toImg.js";
 import deleteEntry from "./delete.js";
 
 
@@ -89,7 +89,7 @@ container.addEventListener("click", (e) => {
 
 
          //Construct the URL with the object's ID as a query parameter
-         const url = `/form_update.html?id=${cardId}`;
+         const url = `./form_update.html?id=${cardId}`;
 
 
          // Set the href attribute of the link element

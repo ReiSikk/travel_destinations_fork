@@ -4,36 +4,38 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Travel destinations - Login</title>
+    <title>Travel destinations</title>
     <link rel="stylesheet" href="style.css" />
+    <script type="module" src="travel_destinations.js" defer></script>
+    <script type="module"src="./api/express.js" defer></script>
 
   </head>
   <body>
     <header>
       <div>
-      <img src="/assets/globe_icon.svg" alt="globe icon" />
+      <img src="./assets/globe_icon.svg" alt="globe icon" />
       <h1><a href="index.html">My travel journal.</a></h1>
     </div>
     </header>
     <main>
       <div id="notification_login" class="notification hide">
         <p></p>
-        <img id="close_icon" src="/assets/close.svg" alt="Closing icon" />
+        <img id="close_icon" src="./assets/close.svg" alt="Closing icon" />
       </div>
-        <h2>Log-in</h2>
-        <form id="login">
-          <label for="email">E-mail</label>
-          <input type="text" id="email" name="email" required>
+        <h2>Sign up</h2>
+        <form id="signup">
+            <label for="email">E-mail</label>
+            <input type="text" id="email" name="email" required>
             <label for="password">Password</label>
             <input type="password" id="password" name="password" required>
-            <a href="index.html" id="log-in-btn" class="primary-button">Continue</a>
+            <input type="submit" id="sign-up-btn" class="primary-button" value="Continue">
         </form>
-    <p>Don't have an account? <a href="signup.html" id="signup-link">Sign up</a></p>
     </main>
     <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
     <script>dayjs().format()</script>
   </body>
-  <script src="login.js"></script>
-  <script src="signup.js"></script>
 <script src="popup.js"></script>
+<script type="module" src="delete.js"></script>
+<script src="signup.js" defer></script>
+<script src="login.js" defer></script>
 </html>
