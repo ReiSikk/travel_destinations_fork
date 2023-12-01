@@ -20,11 +20,10 @@ window.addEventListener("load", async () => {
   }
 
 
-  const response = await fetch("http://127.0.0.1:4000/destinations/", {
+  const response = await fetch("http://localhost:4000/destinations/", {
    method: "GET",
    headers: {
      "Content-type": "application/json",
-     "Access-Control-Allow-Origin": "http://127.0.0.1:4000/destinations/",
    },
   })
   const body = await response.json()
