@@ -22,7 +22,12 @@ git clone <repository-url>
 
 cd <travel_destinations_fork>
 
-3. Start the application using DOcker Compose
+3. Create a .env file to store neccessary environment variables
+
+jwt_secret="D9678F1E8D648B7D57D7D5CFC4BF40EF589800CEF4C047AE2B24E09A2E7E270F"
+MONGODB_URI="mongodb://127.0.0.1:27017/travel_destinations_ola"
+
+4. Start the application using Docker Compose
 
 docker compose up
 
