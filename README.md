@@ -1,4 +1,4 @@
-# My Full Stack Application
+# Travel Destinations
 
 This is a full stack application with a frontend, a backend built with Express.js, and a MongoDB database.
 
